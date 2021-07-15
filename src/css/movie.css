@@ -1,0 +1,65 @@
+.movie__Card {
+  cursor: pointer;
+  position: relative;
+  background-color: rgb(49, 62, 139);
+  color: white;
+  border-radius: 14px;
+border: 2px solid rgb(24, 24, 59);
+}
+
+.movie__Card:hover{
+  transform: scale(1.1);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.movie__img {
+  display: flex;
+}
+
+.movie__rating {
+  position: absolute;
+  color: rgb(32, 22, 22);
+  background-color: gold;
+  border-radius: 100%;
+  text-align: center;
+  right: 0;
+  padding: 3px;
+  height: 20px;
+  width: 19px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  top: -0.6rem;
+  font-size: 1.4rem;
+}
+.movie__img > img {
+  width: 100%;
+  position: relative;
+  border-radius: 1.2rem 1.2rem 0 0;
+}
+
+.movie__description {
+  display: flex;
+  border: 1px solid;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movie__name > p , a{
+    text-decoration: none;
+    font-size: 1.4rem;
+    padding: 5px;
+    text-align: center;
+}
+
+.movie__footer {
+    display: flex;
+    justify-content: space-between;
+    
+    padding: 0  5px 12px ;
+    align-items: center;
+    border-radius: 2rem;
+}
+.movie__footer > span{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -1,0 +1,95 @@
+ 
+.movieDetail__Img > img{
+    position: relative;
+    width: 100%;
+    border-radius: 1.2rem;
+}
+
+.movie__detailsparent {
+    height: 89vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.movieDetail__right{
+    position: relative;
+}
+ 
+.movieDetail__right > h3{
+    font-size: 4.3rem;
+}
+.movieDetail__geres{
+
+padding: 9px 0;
+}
+.movieDetail__geres > span{
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;  
+}
+.movieDetail__right > h4 {
+    font-size: 1.5rem;
+    font-weight: 100;
+    text-transform: capitalize;
+    
+}
+
+.moviDetail__overview > h3 {
+    font-size: 2.5rem;
+    padding: 12px 0;
+}
+.moviDetail__overview > p{
+    font-size: 2rem;
+}
+.movieDetail__author > h4{
+   padding: .3rem 0;
+   font-size: 1.4rem;
+}
+
+.movieDetail__production {
+    display: flex;
+    
+    align-items: center;
+    padding: 1.8rem 0;
+    position: relative;
+    width: 100%;
+}
+
+.movieDetail__production > h4 {
+    padding-right: 7px;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
+
+.movieDetail__company {
+  
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+.movieDetail__company > img{
+    width: 10rem;
+    position: relative;
+}
+.movieDetail__company >p{
+    padding:0 7px;
+    font-size: 1.4rem;
+}
+
+.movieDetail__watch{
+    padding-top: 2rem;
+     
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.movieDetail__watch >button {
+    font-size: 1.3rem;
+}
+ 

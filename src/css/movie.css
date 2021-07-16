@@ -14,6 +14,8 @@ border: 2px solid rgb(24, 24, 59);
 
 .movie__img {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .movie__rating {

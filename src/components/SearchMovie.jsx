@@ -1,32 +1,21 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Grid, Box, Container } from "@material-ui/core/";
-import StarsRoundedIcon from "@material-ui/icons/StarsRounded";
-import SearchMovie from "./SearchMovie";
-import "../css/movie.css";
-
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchMovie } from "../actions/actions";
+import StarsRoundedIcon from "@material-ui/icons/StarsRounded";
 
-function Movie() {
-  const dispatch = useDispatch();
-  const Movies = useSelector((state) => state.movies);
+function SearchMovie() {
   const searchedMovie = useSelector((state) => state.searchMovie);
-  useEffect(() => {
-    dispatch(fetchMovie());
-  }, [dispatch]);
-  console.log("movies", Movies);
-  console.log("searchedmovie", searchedMovie);
+
   return (
     <Container>
       <Box py={4}>
-        {searchedMovie ? <SearchMovie /> : null}
-        <h1 style={{ paddingBottom: "22px" }}> POPULAR MOVIES</h1>
-        {!Movies ? (
+        <h1 style={{ paddingBottom: "22px" }}> Searched Movies</h1>
+        {!searchedMovie ? (
           <p>Loading..</p>
         ) : (
           <Grid container spacing={3}>
-            {Movies.map((data) => (
+            {searchedMovie.map((data) => (
               <Grid
                 key={data.id}
                 item
@@ -39,10 +28,14 @@ function Movie() {
                 <Link to={`/movieDetail/${data.id}`}>
                   <div className="movie__Card">
                     <div className="movie__img">
-                      <img
-                        src={`https://image.tmdb.org/t/p/original/${data.poster_path}`}
-                        alt=""
-                      />
+                      {!data.poster_path ? (
+                        <p style={{textAlign:"center"}}>No image Available</p>
+                      ) : (
+                        <img
+                          src={`https://image.tmdb.org/t/p/original/${data.poster_path}`}
+                          alt=""
+                        />
+                      )}
                       <div className="movie__rating">
                         <span>
                           {data.vote_average === 0 ? 0.0 : data.vote_average}
@@ -69,4 +62,4 @@ function Movie() {
   );
 }
 
-export default Movie;
+export default SearchMovie;

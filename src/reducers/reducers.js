@@ -1,6 +1,5 @@
 import {
-   
-  SINGLE_MOVIE,
+  SEARCH_MOVIE,
   FETCH_API,
   FETCH_SINGLE,
 } from "../actions/actions";
@@ -18,17 +17,16 @@ export const movieReducer = (state = initialState, action) => {
         movies: action.payload,
         singleMovie: state.singleMovie,
       };
-    case SINGLE_MOVIE:
-      return {
-        ...state,
-        singleMovie: action.payload,
-      };
-
+ 
     case FETCH_SINGLE:
       return {
         ...state,
         singleMovie: action.payload,
       };
+
+      case SEARCH_MOVIE : return {
+        ...state , searchMovie : action.payload
+      }
     default:
       return {
         state,

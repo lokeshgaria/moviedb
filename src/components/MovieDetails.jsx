@@ -24,10 +24,11 @@ function MovieDetails() {
       <Grid container className="movie__detailsparent">
         <Grid item lg={3} md={3} sm={3} xs={12} component={Box} p={4}>
           <div className="movieDetail__Img">
-            <img
+            {!SingleMovie.poster_path ? <p>No image Available</p> :  <img
               src={`https://image.tmdb.org/t/p/original/${SingleMovie.poster_path}`}
               alt=""
-            />
+            />}
+           
           </div>
         </Grid>
         <Grid item lg={9} md={9} sm={9} xs={12} component={Box} p={4}>

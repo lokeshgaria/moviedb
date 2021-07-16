@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import "../css/MovieDetails.css";
 import { useParams } from "react-router";
 import { Grid, Box, Button } from "@material-ui/core/";
-import { getSingleMovie } from "../actions/actions";
+import { fetchMoviedata } from "../actions/actions";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
+ 
 
 function MovieDetails() {
   let { id } = useParams();
@@ -13,16 +13,7 @@ function MovieDetails() {
 
   const SingleMovie = useSelector((state) => state.singleMovie);
   useEffect(() => {
-    const getMovieDetails = async () => {
-      const response = await axios
-        .get(
-          `https://api.themoviedb.org/3/movie/${id}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`
-        )
-        .catch((error) => console.log(error));
-      dispatch(getSingleMovie(response.data));
-       
-    };
-    getMovieDetails();
+   dispatch(fetchMoviedata(id))
   }, [id, dispatch]);
 
   console.log("single", SingleMovie);

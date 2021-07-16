@@ -2,25 +2,20 @@ import React, { useEffect } from "react";
 import { Grid, Box, Container } from "@material-ui/core/";
 import StarsRoundedIcon from "@material-ui/icons/StarsRounded";
 import "../css/movie.css";
-import axios from "axios";
+ 
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getData } from "../actions/actions";
+import { fetchMovie} from "../actions/actions";
 
 function Movie() {
   const dispatch = useDispatch();
   const Movies = useSelector((state) => state.movies);
 
   useEffect(() => {
-    const getResponse = async () => {
-      const response = await axios
-        .get(
-          "https://api.themoviedb.org/3/movie/popular?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US"
-        )
-        .catch((err) => console.log(err));
-      dispatch(getData(response.data.results));
-    };
-    getResponse();
+
+    dispatch(fetchMovie())
+    
+     
   }, [dispatch]);
   console.log("movies", Movies);
   return (

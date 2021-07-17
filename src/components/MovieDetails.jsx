@@ -4,16 +4,16 @@ import { useParams } from "react-router";
 import { Grid, Box, Button } from "@material-ui/core/";
 import { fetchMoviedata } from "../actions/actions";
 import { useDispatch, useSelector } from "react-redux";
- 
+import ScheduleIcon from '@material-ui/icons/Schedule';
 
 function MovieDetails() {
   let { id } = useParams();
- 
+
   const dispatch = useDispatch();
 
   const SingleMovie = useSelector((state) => state.singleMovie);
   useEffect(() => {
-   dispatch(fetchMoviedata(id))
+    dispatch(fetchMoviedata(id));
   }, [id, dispatch]);
 
   console.log("single", SingleMovie);
@@ -24,25 +24,32 @@ function MovieDetails() {
       <Grid container className="movie__detailsparent">
         <Grid item lg={3} md={3} sm={3} xs={12} component={Box} p={4}>
           <div className="movieDetail__Img">
-            {!SingleMovie.poster_path ? <p>No image Available</p> :  <img
-              src={`https://image.tmdb.org/t/p/original/${SingleMovie.poster_path}`}
-              alt=""
-            />}
-           
+            {!SingleMovie.poster_path ? (
+              <p>No image Available</p>
+            ) : (
+              <img
+                src={`https://image.tmdb.org/t/p/original/${SingleMovie.poster_path}`}
+                alt=""
+              />
+            )}
           </div>
         </Grid>
         <Grid item lg={9} md={9} sm={9} xs={12} component={Box} p={4}>
           <div className="movieDetail__right">
             <h3>{SingleMovie.title}</h3>
             <div className="movieDetail__geres">
-              <span>
-                {" "}
-                {SingleMovie.genres.map((data) => (
-                  <span key={data.id} style={{ paddingRight: "5px" }}>
-                    {data.name} ,
-                  </span>
-                ))}{" "}
+              
+              {SingleMovie.genres.map((data) => (
+                <span className="movie_detail__movieType" key={data.id}>
+                  {data.name}
+                </span>
+              ))}
+              
+           
+              <span className="movieDetail_duration">
+                <ScheduleIcon />
                 {SingleMovie.runtime}m
+
               </span>
             </div>
 

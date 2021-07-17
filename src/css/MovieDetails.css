@@ -1,95 +1,117 @@
- 
-.movieDetail__Img > img{
-    position: relative;
-    width: 100%;
-    border-radius: 1.2rem;
+.movieDetail__Img > img {
+  position: relative;
+  width: 100%;
+  border-radius: 1.2rem;
 }
 
 .movie__detailsparent {
-    height: 89vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
-    
+  height: 89vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.movieDetail__right{
-    position: relative;
+.movieDetail__right {
+  position: relative;
 }
- 
-.movieDetail__right > h3{
-    font-size: 4.3rem;
-}
-.movieDetail__geres{
 
-padding: 9px 0;
+.movieDetail__right > h3 {
+  font-size: 4.3rem;
 }
-.movieDetail__geres > span{
-    font-size: 1.8rem;
-    display: flex;
-    align-items: center;  
+.movieDetail__geres {
+  padding: 14px 0;
 }
+
 .movieDetail__right > h4 {
-    font-size: 1.5rem;
-    font-weight: 100;
-    text-transform: capitalize;
-    
+  font-size: 1.5rem;
+  font-weight: 100;
+  text-transform: capitalize;
+}
+.movie_detail__movieType {
+  border: 2px solid gray;
+
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin: 1rem 0.4rem;
+  border-radius: 12px;
+  background-color: rgb(248, 247, 247);
+  color: gray;
+  padding: 2px 11px;
+}
+
+.movieDetail__geres {
+  display: flex;
+  flex-wrap: wrap;
+
+  font-size: 1.5rem;
+  align-items: center;
+}
+.movieDetail_duration > .MuiSvgIcon-root {
+  padding: 0 12px;
+  font-size: 3rem;
+}
+.movieDetail_duration {
+  text-align: end;
+
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 12px;
 }
 
 .moviDetail__overview > h3 {
-    font-size: 2.5rem;
-    padding: 12px 0;
+  font-size: 2.5rem;
+  padding: 12px 0;
 }
-.moviDetail__overview > p{
-    font-size: 2rem;
+.moviDetail__overview > p {
+  font-size: 2rem;
 }
-.movieDetail__author > h4{
-   padding: .3rem 0;
-   font-size: 1.4rem;
+.movieDetail__author > h4 {
+  padding: 0.3rem 0;
+  font-size: 1.4rem;
 }
 
 .movieDetail__production {
-    display: flex;
-    
-    align-items: center;
-    padding: 1.8rem 0;
-    position: relative;
-    width: 100%;
+  display: flex;
+
+  align-items: center;
+  padding: 1.8rem 0;
+  position: relative;
+  width: 100%;
 }
 
 .movieDetail__production > h4 {
-    padding-right: 7px;
-    text-transform: uppercase;
-    font-size: 1.3rem;
+  padding-right: 7px;
+  text-transform: uppercase;
+  font-size: 1.3rem;
 }
 
 .movieDetail__company {
-  
-   width: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.movieDetail__company > img{
-    width: 10rem;
-    position: relative;
+.movieDetail__company > img {
+  width: 10rem;
+  position: relative;
 }
-.movieDetail__company >p{
-    padding:0 7px;
-    font-size: 1.4rem;
+.movieDetail__company > p {
+  padding: 0 7px;
+  font-size: 1.4rem;
 }
 
-.movieDetail__watch{
-    padding-top: 2rem;
-     
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.movieDetail__watch {
+  padding-top: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.movieDetail__watch >button {
-    font-size: 1.3rem;
+.movieDetail__watch > button {
+  font-size: 1.3rem;
 }
- 

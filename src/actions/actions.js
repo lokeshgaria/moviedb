@@ -2,6 +2,9 @@ import axios from "axios";
 export const SEARCH_MOVIE = "SEARCH_MOVIE";
 export const FETCH_API = "FETCH_API";
 export const FETCH_SINGLE = "FETCH_SINGLE";
+export const EMPTY_DATA = "EMPTY_DATA";
+
+
 
 export const searchMovie = (movieName) => {
   return async (dispatch) => {
@@ -12,6 +15,7 @@ export const searchMovie = (movieName) => {
     dispatch({
       type: SEARCH_MOVIE,
       payload: response.data.results,
+      movieName
     });
   };
 };
@@ -37,3 +41,12 @@ export const fetchMoviedata = (id) => {
     dispatch({ type: FETCH_SINGLE, payload: response.data });
   };
 };
+
+export const emptyData = () =>{
+  return async (dispatch) =>{
+    dispatch({
+      type : EMPTY_DATA,
+      
+    })
+  }
+}

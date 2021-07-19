@@ -8,22 +8,24 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMovie } from "../actions/actions";
 
-function Movie() {
+function Movie({movieName}) {
   const dispatch = useDispatch();
   const Movies = useSelector((state) => state.movies);
   const searchedMovie = useSelector((state) => state.searchMovie);
+  
   useEffect(() => {
     dispatch(fetchMovie());
   }, [dispatch]);
   console.log("movies", Movies);
   console.log("searchedmovie", searchedMovie);
+  console.log("from parent" , movieName);
   return (
     <Container>
       <Box py={4}>
-        {searchedMovie ? <SearchMovie /> : null}
+        {searchedMovie ? <SearchMovie movieName={movieName} /> : null}
         <h1 style={{ paddingBottom: "22px" }}> POPULAR MOVIES</h1>
-        {!Movies ? (
-          <p>Loading..</p>
+        {!Movies ? ( 
+          <div id="loader" className="nfLoader"></div>
         ) : (
           <Grid container spacing={3}>
             {Movies.map((data) => (

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "../css/MovieDetails.css";
 import { useParams } from "react-router";
 import { Grid, Box, Button } from "@material-ui/core/";
-import { fetchMoviedata } from "../actions/actions";
+import { fetchMoviedata ,emptyData} from "../actions/actions";
 import { useDispatch, useSelector } from "react-redux";
 import ScheduleIcon from '@material-ui/icons/Schedule';
 
@@ -12,13 +12,17 @@ function MovieDetails() {
   const dispatch = useDispatch();
 
   const SingleMovie = useSelector((state) => state.singleMovie);
+
   useEffect(() => {
     dispatch(fetchMoviedata(id));
+    return () =>{
+       dispatch(emptyData());
+    }
   }, [id, dispatch]);
 
   console.log("single", SingleMovie);
   return !SingleMovie ? (
-    <p>Loading</p>
+    <div id="loader" className="nfLoader"></div>
   ) : (
     <Box>
       <Grid container className="movie__detailsparent">

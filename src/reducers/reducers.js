@@ -2,6 +2,7 @@ import {
   SEARCH_MOVIE,
   FETCH_API,
   FETCH_SINGLE,
+  EMPTY_DATA
 } from "../actions/actions";
 
 const initialState = {
@@ -25,7 +26,11 @@ export const movieReducer = (state = initialState, action) => {
       };
 
       case SEARCH_MOVIE : return {
-        ...state , searchMovie : action.payload
+        ...state , searchMovie : action.payload 
+      }
+
+      case  EMPTY_DATA : return {
+        
       }
     default:
       return {

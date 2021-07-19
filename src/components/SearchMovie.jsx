@@ -1,18 +1,18 @@
-import React from "react";
+import React   from "react";
 import { Grid, Box, Container } from "@material-ui/core/";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import StarsRoundedIcon from "@material-ui/icons/StarsRounded";
-
-function SearchMovie() {
+ 
+function SearchMovie({movieName}) {
   const searchedMovie = useSelector((state) => state.searchMovie);
-
+  
   return (
     <Container>
       <Box py={4}>
-        <h1 style={{ paddingBottom: "22px" }}> Searched Movies</h1>
+        <h1 style={{ paddingBottom: "22px" }}> Showing Result for {movieName}</h1>
         {!searchedMovie ? (
-          <p>Loading..</p>
+        <div id="loader" className="nfLoader"></div>
         ) : (
           <Grid container spacing={3}>
             {searchedMovie.map((data) => (

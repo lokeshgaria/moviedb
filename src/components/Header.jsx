@@ -4,17 +4,18 @@ import SearchIcon from "@material-ui/icons/Search";
 import { Link } from "react-router-dom";
 import {searchMovie} from "../actions/actions";
 import { useDispatch } from "react-redux"; 
-
+ 
 //search api for movie : https://api.themoviedb.org/3/search/movie?api_key=4e44d9029b1270a757cddc766a1bcb63&query=luca
-function Header() {
+function Header(props) {
   const [movieName, setMovie] = useState("");
   
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); 
   
   const submitMovie = (e) =>{
     e.preventDefault();
     console.log(movieName);
     dispatch(searchMovie(movieName));
+    props.sendName(movieName); 
   }
 
    
